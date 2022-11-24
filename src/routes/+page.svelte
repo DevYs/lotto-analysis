@@ -53,6 +53,9 @@
         border-radius: 40px;
         display: inline-block;
         margin: 0 2px;
+        font-weight: bold;
+        font-size: 20px;
+        color: #333;
     }
 
     .type-10 { border:1px solid #fbc400; background-color: #fbc400; }
