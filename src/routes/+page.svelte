@@ -1,7 +1,7 @@
 <script>
-	import { generate } from '$lib/js/generator';
+	import { generate2 } from '$lib/js/generator';
 
-	const lottoList = generate();
+	const lottoList = generate2();
 	console.log(lottoList);
 </script>
 
@@ -12,6 +12,10 @@
 
 <section>
     {#each lottoList as lotto, i}
+        {#if i == 5}
+            <br />
+        {/if}
+
         <ul>
             {#each lotto as num, i}
                 {#if 1 <= num && num <= 10}
