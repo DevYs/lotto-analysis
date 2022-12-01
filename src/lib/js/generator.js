@@ -27,6 +27,22 @@ const generate2 = () => {
 	lottoList.push(numbers.slice(18, 24).sort((a, b) => a - b));
 	lottoList.push(numbers.slice(24, 30).sort((a, b) => a - b));
 
+	shuffle(numbers);
+
+	lottoList.push(numbers.slice(0, 6).sort((a, b) => a - b));
+	lottoList.push(numbers.slice(6, 12).sort((a, b) => a - b));
+	lottoList.push(numbers.slice(12, 18).sort((a, b) => a - b));
+	lottoList.push(numbers.slice(18, 24).sort((a, b) => a - b));
+	lottoList.push(numbers.slice(24, 30).sort((a, b) => a - b));
+
+	shuffle(numbers);
+
+	lottoList.push(numbers.slice(0, 6).sort((a, b) => a - b));
+	lottoList.push(numbers.slice(6, 12).sort((a, b) => a - b));
+	lottoList.push(numbers.slice(12, 18).sort((a, b) => a - b));
+	lottoList.push(numbers.slice(18, 24).sort((a, b) => a - b));
+	lottoList.push(numbers.slice(24, 30).sort((a, b) => a - b));
+
 	return lottoList;
 };
 

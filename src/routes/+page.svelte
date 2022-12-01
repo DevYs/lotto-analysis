@@ -12,7 +12,9 @@
 
 <section>
     {#each lottoList as lotto, i}
-        {#if i == 5}
+        {#if i % 5 == 0}
+            <br />
+            <h1>{i / 5 + 1}</h1>
             <br />
         {/if}
 
@@ -39,6 +41,8 @@
         margin: 0 auto;
         width: 100%;
     }
+
+    h1 { text-align: center; }
 
     ul {
         padding: 5px 0;
