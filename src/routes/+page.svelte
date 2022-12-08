@@ -67,7 +67,7 @@
         height: 34px;
         line-height: 34px;
         font-size: 18px;
-        padding: 0;
+        padding: 0px 10px;
         vertical-align: middle;
     }
 
