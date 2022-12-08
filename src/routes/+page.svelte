@@ -12,7 +12,7 @@
 
 <section>
     <div class="input-num">
-        <input type="number" value="4" on:change={(v) => lottoSetSize = v.target.value} /> <button on:click={() => requestAllJson().then(result => lottoList = draw(lottoSetSize, result))}>추첨</button>
+        <input type="number" min="1" max="99" value="4" on:change={(e) => lottoSetSize = e.target.value } /> <button on:click={() => requestAllJson().then(result => lottoList = draw(lottoSetSize, result))}>추첨</button>
     </div>
 
     {#if lottoList}
