@@ -49,8 +49,11 @@ const generate = (lottoList, numbers) => {
 	lottoList.push(numbers.slice(24, 30).sort((a, b) => a - b));
 };
 
-const draw = (json) => {
-	const size = 3;
+const draw = (size, json) => {
+	console.log(size);
+
+	if(!size) return undefined;
+
 	const lottoList = [];
 	const arr = counting(json);
 	const orderedByCount = orderingByCount(arr).slice(0, 30);

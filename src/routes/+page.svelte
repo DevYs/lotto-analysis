@@ -1,7 +1,8 @@
 <script>
 	import { requestAllJson, draw } from '$lib/js/generator';
 	let lottoList;
-	requestAllJson().then(result => lottoList = draw(result));
+	let lottoSetSize = 4;
+	requestAllJson().then(result => lottoList = draw(lottoSetSize, result));
 </script>
 
 <svelte:head>
@@ -10,6 +11,10 @@
 </svelte:head>
 
 <section>
+    <div class="input-num">
+        <input type="number" value="4" on:change={(v) => lottoSetSize = v.target.value} /> <button on:click={() => requestAllJson().then(result => lottoList = draw(lottoSetSize, result))}>추첨</button>
+    </div>
+
     {#if lottoList}
         {#each lottoList as lotto, i}
             {#if i % 5 == 0}
@@ -43,7 +48,31 @@
         width: 100%;
     }
 
-    h1 { text-align: center; }
+    .input-num {
+        padding: 20px 0;
+        text-align:center;
+    }
+
+    .input-num input {
+        height: 30px;
+        line-height: 30px;
+        width: 50px;
+        font-size: 18px;
+        padding: 0;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .input-num button {
+        height: 34px;
+        line-height: 34px;
+        width: 50px;
+        font-size: 18px;
+        padding: 0;
+        vertical-align: middle;
+    }
+
+    h1 { text-align: center; font-size: 30px; font-weight:bold; color: #333333; margin-top: 30px; }
 
     ul {
         padding: 5px 0;
