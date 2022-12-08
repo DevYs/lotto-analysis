@@ -56,7 +56,6 @@
     .input-num input {
         height: 30px;
         line-height: 30px;
-        width: 50px;
         font-size: 18px;
         padding: 0;
         vertical-align: middle;
