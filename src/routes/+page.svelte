@@ -1,8 +1,7 @@
 <script>
-	import { generate2 } from '$lib/js/generator';
-
-	const lottoList = generate2();
-	console.log(lottoList);
+	import { requestAllJson, draw } from '$lib/js/generator';
+	let lottoList;
+	requestAllJson().then(result => lottoList = draw(result));
 </script>
 
 <svelte:head>
@@ -11,29 +10,31 @@
 </svelte:head>
 
 <section>
-    {#each lottoList as lotto, i}
-        {#if i % 5 == 0}
-            <br />
-            <h1>{i / 5 + 1}</h1>
-            <br />
-        {/if}
+    {#if lottoList}
+        {#each lottoList as lotto, i}
+            {#if i % 5 == 0}
+                <br />
+                <h1>{i / 5 + 1}</h1>
+                <br />
+            {/if}
 
-        <ul>
-            {#each lotto as num, i}
-                {#if 1 <= num && num <= 10}
-                    <li class="type-10">{num}</li>
-                {:else if 11 <= num && num <= 20}
-                    <li class="type-20">{num}</li>
-                {:else if 21 <= num && num <= 30}
-                    <li class="type-30">{num}</li>
-                {:else if 31 <= num && num <= 40}
-                    <li class="type-40">{num}</li>
-                {:else if 41 <= num && num <= 45}
-                    <li class="type-45">{num}</li>
-                {/if}
-            {/each}
-        </ul>
-    {/each}
+            <ul>
+                {#each lotto as num, i}
+                    {#if 1 <= num && num <= 10}
+                        <li class="type-10">{num}</li>
+                    {:else if 11 <= num && num <= 20}
+                        <li class="type-20">{num}</li>
+                    {:else if 21 <= num && num <= 30}
+                        <li class="type-30">{num}</li>
+                    {:else if 31 <= num && num <= 40}
+                        <li class="type-40">{num}</li>
+                    {:else if 41 <= num && num <= 45}
+                        <li class="type-45">{num}</li>
+                    {/if}
+                {/each}
+            </ul>
+        {/each}
+    {/if}
 </section>
 
 <style>
