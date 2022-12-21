@@ -1,8 +1,6 @@
 <script>
-	import { requestAllJson, draw } from '$lib/js/generator';
-	let lottoList;
-	let lottoSetSize = 4;
-	requestAllJson().then(result => lottoList = draw(lottoSetSize, result));
+	import { draw20games } from '$lib/js/random';
+	let lottoList = draw20games();
 </script>
 
 <svelte:head>
@@ -11,10 +9,6 @@
 </svelte:head>
 
 <section>
-    <div class="input-num">
-        <input type="number" min="1" max="99" value="4" on:change={(e) => lottoSetSize = e.target.value } /> <button on:click={() => requestAllJson().then(result => lottoList = draw(lottoSetSize, result))}>추첨</button>
-    </div>
-
     {#if lottoList}
         {#each lottoList as lotto, i}
             {#if i % 5 == 0}
