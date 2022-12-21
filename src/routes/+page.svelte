@@ -42,29 +42,6 @@
         width: 100%;
     }
 
-    .input-num {
-        padding: 20px 0;
-        text-align:center;
-    }
-
-    .input-num input {
-        height: 30px;
-        line-height: 30px;
-        width: 50px;
-        font-size: 18px;
-        padding: 0;
-        vertical-align: middle;
-        text-align: center;
-    }
-
-    .input-num button {
-        height: 34px;
-        line-height: 34px;
-        font-size: 18px;
-        padding: 0px 10px;
-        vertical-align: middle;
-    }
-
     h1 { text-align: center; font-size: 30px; font-weight:bold; color: #333333; margin-top: 30px; }
 
     ul {
